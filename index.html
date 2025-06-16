@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Excel'de İsim Ara</title>
+  <style>
+    h2 {
+      text-align: center;
+      color: #333;
+      font-size: 2em;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    #resultList {
+      margin-top: 20px;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    #resultList li {
+      list-style-type: none;
+      padding: 1rem;
+      margin: 2.5rem 0;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+
+      #excelFile,
+      #nameInput,
+      #searchBtn {
+        width: 100%;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 10px;
+      }
+    }
+
+    #excelFile,
+    #nameInput,
+    #searchBtn {
+      font-size: 1.2em;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    #searchBtn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    #searchBtn:hover {
+      background-color: #388E3C;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 0 auto 20px auto;
+      padding: 1rem;
+    }
+
+    @media (min-width: 601px) {
+      form {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      #excelFile,
+      #nameInput,
+      #searchBtn {
+        padding: 1rem .5rem;
+        width: 100%;
+        margin: 1rem 0;
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Excel Dosyası Yükle ve İsim Ara</h2>
+  <form>
+    <input type="file" id="excelFile" accept=".xlsx, .xls" />
+    <input type="text" id="nameInput" placeholder="İsim girin" />
+    <button type="button" id="searchBtn">Ara</button>
+  </form>
+  <ul id="resultList"></ul>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
